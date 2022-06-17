@@ -1,0 +1,71 @@
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.best-selling {
+    display: flex;
+    padding-left: 20px;
+}
+
+.search-input {
+    height: 20px;
+    width: 350px;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    background-color: #ade8f4;
+    color: #023e8a;
+    border-radius: 40px;
+    padding-left: 15px;
+    vertical-align: center;
+}
+
+.clicker {
+    background-color: #00b4d8;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #023e8a;
+    cursor: pointer;
+    font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.15385;
+    margin-left: 10px;
+    margin-top: 5px;
+    padding: 8px 0.8em;
+    text-align: center;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+    height: 35px;
+    width: 100px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.category-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    list-style-type: none;
+    height: 40px;
+    font-weight: 500;
+    transition: all .2s ease;
+}

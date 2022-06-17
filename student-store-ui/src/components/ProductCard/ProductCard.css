@@ -1,0 +1,36 @@
+.product-card {
+    background: white;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 250px;
+}
+
+.product-info {
+    flex: 1;
+    display: flex;
+    border-top: solid 1px black;
+    flex-direction: column;
+    align-content: center;
+    margin-bottom: 5px;
+}
+
+.product-name {
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+.product-price {
+    font-size: 14px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.product-image {
+    height: 250px;
+    width: 100%;
+}

@@ -1,0 +1,30 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    z-index: 100;
+    top: 0px;
+    height: 100vh;
+    padding: 0px;
+    overflow-y: scroll;
+    padding-bottom: 2rem;
+    background: #2c4047;
+    position: fixed;
+    height: 100vh;
+    width: 80px;
+    color: white;
+    border-right: solid 1px white;
+}
+
+.closed {
+    width: 60px;
+}
+
+.toggle-button {
+    margin-top: 20px;
+    transition: all .2s cubic-bezier(.075,.82,.165,1);
+    background: transparent;
+    color: #fff;
+    border: none;
+}

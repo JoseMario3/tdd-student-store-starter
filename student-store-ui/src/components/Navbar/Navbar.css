@@ -1,0 +1,32 @@
+.navbar {
+    background: #2c4047;
+    color: white;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    color: white;
+    margin-bottom: 0px;
+}
+
+.contents {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+    flex: 1;
+    max-width: 650px;
+    list-style-type: none;
+    color: white;
+}
