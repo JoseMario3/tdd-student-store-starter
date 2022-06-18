@@ -4,7 +4,8 @@ import Sidebar from "../Sidebar/Sidebar";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import Footer from "../Footer/Footer";
 import Home from "../Home/Home";
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+//import NotFound from "../NotFound/NotFound";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
@@ -14,10 +15,10 @@ export default function App() {
   const [isFetching, setIsFetching] = useState(false);
   const [category, setCategory] = useState("All Categories");
   const [search, setSearch] = useState("");
-  
+
   const handleOnSubmit = (event) => {
     setSearch(event.target.value);
-  }
+  };
 
   useEffect(() => {
     const getProducts = async () => {
@@ -36,8 +37,8 @@ export default function App() {
 
   return (
     <div className="app">
-        <BrowserRouter>
-          <main>
+      <BrowserRouter>
+        <main>
           <Navbar />
           <Sidebar
             isOpen={true}
@@ -49,19 +50,29 @@ export default function App() {
             handleOnToggle={null}
           />
           <Routes>
-            <Route path="/" element={<Home
-              products={products}
-              handleadditemtocart={null}
-              handleremoveitemfromcart={null}
-              category={category}
-              setCategory={setCategory}
-              search={search}
-              handleOnSubmit={handleOnSubmit}
-            />}/>
-            <Route path="/products/:productId" element={<ProductDetail
-              handleAddItemToCart={null}
-              handleRemoveItemFromCart={null}
-            />}/>
+            <Route
+              path="/"
+              element={
+                <Home
+                  products={products}
+                  handleadditemtocart={null}
+                  handleremoveitemfromcart={null}
+                  category={category}
+                  setCategory={setCategory}
+                  search={search}
+                  handleOnSubmit={handleOnSubmit}
+                />
+              }
+            />
+            <Route
+              path="/products/:productId"
+              element={
+                <ProductDetail
+                  handleAddItemToCart={null}
+                  handleRemoveItemFromCart={null}
+                />
+              }
+            />
           </Routes>
           <Footer />
         </main>

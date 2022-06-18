@@ -29,4 +29,15 @@
     max-width: 650px;
     list-style-type: none;
     color: white;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    text-decoration: none;
+    color: white;
 }
