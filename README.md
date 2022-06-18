@@ -281,3 +281,28 @@ The following specifications were met on the Express backend and the React front
       - **optional**:
         - [ ] `receipt` - text describing the order (what might go on a receipt)
     - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
+
+### Reflection
+
+- Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+
+For the most part, the topics discussed in the labs prepared me to complete this assignment. There were a couple parts that I didn't feel
+understand how to accomplish, such as the categories button and search bar. Everything else I felt adequately prepared to tackle, from the api
+call to using routers.
+
+- If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+
+If I had more time, I would work a lot more on the css, since parts of my site still don't look very good. I also want to work more on the stretch features, like working on the shopping cart. If I had even more time, I would spends some time designing the page to be more my style rather than following the example site given to us.
+
+- Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
+My project demo went well. I was glad that I was able to implement all the core features in time. I wish the css on my site had been better before, but everything else was good. I noticed some of my peers had time to implement the stretch features and the design their website to their liking. Unfortunately, I didn't have time to get to those components, but hopefully I can for the next project.
+
+### Open-source libraries used
+
+- Add any links to open-source libraries used in your project.
+  https://codepath-student-store-demo.surge.sh/
+
+### Shout out
+
+First and foremost, shout out to my podmates Amber, Dylan, and Maurice. They played a big part in helping me get started and getting the api call to work correctly. I'm glad I got grouped with them. Second, shout out to the TAs who helped me, Roy, Rebecca, and Tatiana. I got really stuck in a couple parts and they helped me out of the pits so I could get everything working. I want to shout out some of my peers who weren't in my pod, Aileen and Doris, as they helped me fix some bugs the night I was working on the project. Lastly, shout out to my mentor Saurabh who also helped me with a couple bugs. I could not have finished this project without help from everybody, and I am so grateful for each of them.
