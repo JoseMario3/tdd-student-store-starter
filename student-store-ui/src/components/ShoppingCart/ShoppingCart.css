@@ -1,0 +1,143 @@
+.shopping-cart {
+    width: 100%;
+    color: #fff;
+}
+
+.shopping-cart .open {
+    max-width: 550px;
+}
+
+.shopping-cart h3 {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-cart .open>h3>span {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-cart .open .cart-icon {
+    margin-bottom: 0px;
+    padding-left: 5px;
+}
+
+.material-icons.md-48 {
+    font-size: 40px;
+}
+
+.shopping-cart .notification {
+    color: #fff;
+    text-align: center;
+    margin: 10px;
+}
+
+.checkout-form {
+    padding: 16px;
+}
+
+.checkout-form .input-field {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.checkout-form .input-field .label {
+    color: #fff;
+}
+
+.checkout-form .input-field .control {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.checkout-form .input-field .control input {
+    width: 100%;
+    height: 36px;
+    padding: 0 15px;
+    border-radius: 8px;
+    border: solid 1px #e4e4e4;
+    flex: 1;
+    font-size: 16px;
+}
+
+.checkout-form .label {
+    color: #fff;
+}
+
+.checkout-form a {
+    text-decoration: none;
+    color: #00c385;
+    margin: 0px;
+    padding-left: 5px;
+    width: 200px;
+    display: inline-block;
+}
+
+.checkout-form .is-danger {
+    color: red;
+    margin: 5px;
+}
+
+.checkout-form button {
+    margin-top: 10px;
+    padding: 12px 18px;
+    font-size: 18px;
+    cursor: pointer;
+    background: transparent;
+    border: solid 1px white;
+    color: #fff;
+}
+
+.checkout-success {
+    width: 100%;
+    padding: 1rem;
+}
+
+.checkout-success h3 {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+}
+
+.checkout-success>h3>span {
+    margin-left: 10px;
+}
+
+.checkout-success p {
+    color: #fff;
+    margin: 0px;
+}
+
+.material-icons.md-48 {
+    font-size: 40px;
+}
+
+.sidebar .closed i {
+    margin-right: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.shopping-cart .closed {
+    width: 100%;
+    color: #fff;
+}
+
+.shopping-cart .closed .cart-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+    padding-left: 0.5rem;
+}
+
+.shopping-cart .closed .cart-icon {
+    margin-bottom: 16px;
+}

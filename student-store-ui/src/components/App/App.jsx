@@ -16,15 +16,36 @@ export default function App() {
   const [category, setCategory] = useState("All Categories");
   const [search, setSearch] = useState("");
   const [active, setActive] = useState("All Categories");
-  const [sidebar, setSidebar] = useState(false)
+  const [isOpen, setSidebar] = useState(false);
+  const [hamburger, setHamburger] = useState(true);
 
   const handleOnSubmit = (event) => {
     setSearch(event.target.value);
   };
 
   const handleOnToggle = (event) => {
-    setSidebar(sidebar => !sidebar);
-  }
+    setSidebar((isOpen) => !isOpen);
+  };
+
+  const handleHamburger = (event) => {
+    setHamburger((hamburger) => !hamburger);
+  };
+
+  const handleAddItemToCart = (event) => {
+    return 0;
+  };
+
+  const handleRemoveItemFromCart = (event) => {
+    return 0;
+  };
+
+  const handleOnCheckoutFormChange = (event) => {
+    return 0;
+  };
+
+  const handleOnSubmitCheckoutForm = (event) => {
+    return 0;
+  };
 
   useEffect(() => {
     const getProducts = async () => {
@@ -47,14 +68,13 @@ export default function App() {
         <main>
           <Navbar />
           <Sidebar
-            isOpen={true}
             shoppingCart={products}
             products={products}
             checkoutForm={null}
             handleOnCheckoutFormChange={null}
             handleOnSubmitCheckoutForm={null}
             handleOnToggle={handleOnToggle}
-            sidebar={sidebar}
+            isOpen={isOpen}
           />
           <Routes>
             <Route
@@ -70,6 +90,8 @@ export default function App() {
                   handleOnSubmit={handleOnSubmit}
                   active={active}
                   setActive={setActive}
+                  hamburger={hamburger}
+                  handleHamburger={handleHamburger}
                 />
               }
             />
@@ -82,10 +104,7 @@ export default function App() {
                 />
               }
             />
-            <Route
-              path="*"
-              element={<NotFound />}
-            />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </main>

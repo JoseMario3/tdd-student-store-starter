@@ -31,9 +31,9 @@ export default function SubNavBar(props) {
         </div>
         <div className="row2">
           <div className="hamburger-menu">
-            <i className="material-icons">menu</i>
+            <i className="material-icons" onClick={props.handleHamburger}>menu</i>
           </div>
-          <ul className="category-menu">
+          <ul className={props.hamburger ? "category-menu" : "category-menu closed"}>
             {["All Categories", "Clothing", "Food", "Accessories", "Tech"].map(
               (i) => {
                 return (

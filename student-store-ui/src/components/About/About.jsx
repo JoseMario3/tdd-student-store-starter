@@ -26,6 +26,7 @@ export default function About() {
             <img
               src="https://codepath-student-store-demo.surge.sh/assets/giant_codepath.6952ef57.svg"
               alt="giant Codepath logo"
+              className="logo"
             />
           </div>
         </div>

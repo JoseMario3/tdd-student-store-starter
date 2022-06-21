@@ -31,6 +31,8 @@ export default function Home(props) {
         search={props.search}
         active={props.active}
         setActive={props.setActive}
+        hamburger={props.hamburger}
+        handleHamburger={props.handleHamburger}
       />
 
       <ProductGrid
