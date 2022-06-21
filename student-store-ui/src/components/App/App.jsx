@@ -4,7 +4,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import Footer from "../Footer/Footer";
 import Home from "../Home/Home";
-//import NotFound from "../NotFound/NotFound";
+import NotFound from "../NotFound/NotFound";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -15,10 +15,16 @@ export default function App() {
   const [isFetching, setIsFetching] = useState(false);
   const [category, setCategory] = useState("All Categories");
   const [search, setSearch] = useState("");
+  const [active, setActive] = useState("All Categories");
+  const [sidebar, setSidebar] = useState(false)
 
   const handleOnSubmit = (event) => {
     setSearch(event.target.value);
   };
+
+  const handleOnToggle = (event) => {
+    setSidebar(sidebar => !sidebar);
+  }
 
   useEffect(() => {
     const getProducts = async () => {
@@ -47,7 +53,8 @@ export default function App() {
             checkoutForm={null}
             handleOnCheckoutFormChange={null}
             handleOnSubmitCheckoutForm={null}
-            handleOnToggle={null}
+            handleOnToggle={handleOnToggle}
+            sidebar={sidebar}
           />
           <Routes>
             <Route
@@ -61,6 +68,8 @@ export default function App() {
                   setCategory={setCategory}
                   search={search}
                   handleOnSubmit={handleOnSubmit}
+                  active={active}
+                  setActive={setActive}
                 />
               }
             />
@@ -72,6 +81,10 @@ export default function App() {
                   handleRemoveItemFromCart={null}
                 />
               }
+            />
+            <Route
+              path="*"
+              element={<NotFound />}
             />
           </Routes>
           <Footer />

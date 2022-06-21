@@ -2,29 +2,82 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     flex: 1;
+    position: fixed;
     z-index: 100;
     top: 0px;
     height: 100vh;
-    padding: 0px;
-    overflow-y: scroll;
+    padding: 0;
     padding-bottom: 2rem;
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
     background: #2c4047;
-    position: fixed;
-    height: 100vh;
-    width: 80px;
-    color: white;
     border-right: solid 1px white;
 }
 
-.closed {
-    width: 60px;
+.sidebar.open {
+    width: 575px;
+    overflow-y: scroll;
 }
 
-.toggle-button {
+.sidebar .toggle-button {
     margin-top: 20px;
-    transition: all .2s cubic-bezier(.075,.82,.165,1);
     background: transparent;
     color: #fff;
     border: none;
+}
+
+.material-icons.md-48 {
+    font-size: 40px;
+}
+
+.sidebar i {
+    margin-right: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.material-icons {
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+}
+
+.shopping-cart {
+    width: 100%;
+    color: #fff;
+}
+
+.shopping-cart .cart-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+    padding-left: 0.5rem;
+}
+
+.shopping-cart .cart-icon {
+    margin-bottom: 16px;
+}
+
+.sidebar .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.sidebar.closed {
+    width: 65px;
 }

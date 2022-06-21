@@ -11,6 +11,7 @@ export default function ProductView(props) {
         image = {props.product.image}
         name = {props.product.name}
         price = {props.product.price}
+        desc = {props.product.description}
         handleAddItemToCart = {null}
         handleRemoveItemToCart = {null}
       />
