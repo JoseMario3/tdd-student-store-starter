@@ -26,7 +26,7 @@ https://youtu.be/pmbuLDnzQk0
 #### Stretch Features
 
 - [x] User can click in the top navigation bar to scroll to the relevant section.
-- [] User sees a "not found" display when searching for a nonexistent product.
+- [x] User sees a "not found" display when searching for a nonexistent product.
 - [ ] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
 - [ ] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
@@ -49,15 +49,15 @@ The following specifications were met on the Express backend and the React front
 - [x] Should create **at least** the following state variables:
   - [x] `products` - an array of product objects that is initially empty.
   - [x] `isFetching` - a boolean value representing whether or not the App is currently fetching the `products` from the API.
-  - [ ] `error` - a variable used to display a message when something goes wrong with the API requests.
+  - [x] `error` - a variable used to display a message when something goes wrong with the API requests.
   - [x] `isOpen` - a boolean value representing whether or not the `Sidebar.jsx` is in the open or closed state.
-  - [ ] `shoppingCart` - should store state for the active user's shopping cart (items they want to purchase and the quantity of each item).
-    - [ ] Use whatever data type works best here, but make sure the format the `shoppingCart` as an array before passing it to other components.
-    - [ ] When passed down to other components as a prop, it should formatted as an array of objects.
-    - [ ] Each object in the array should have two fields:
-      - [ ] The `itemId` field should store the `id` of the item being purchased.
-      - [ ] The `quantity` field should store a number representing how many of that item the user is purchasing.
-  - [ ] `checkoutForm` - the user's information that will be sent to the API when they checkout.
+  - [x] `shoppingCart` - should store state for the active user's shopping cart (items they want to purchase and the quantity of each item).
+    - [x] Use whatever data type works best here, but make sure the format the `shoppingCart` as an array before passing it to other components.
+    - [x] When passed down to other components as a prop, it should formatted as an array of objects.
+    - [x] Each object in the array should have two fields:
+      - [x] The `itemId` field should store the `id` of the item being purchased.
+      - [x] The `quantity` field should store a number representing how many of that item the user is purchasing.
+  - [x] `checkoutForm` - the user's information that will be sent to the API when they checkout.
 - [x] Leverage the `useEffect` hook to ensure that when the `App.jsx` component is mounted to the screen...
   - [x] It should make a `GET` request to the API's `/store` endpoint with the `axios.get` method.
   - [x] When the request completes successfully, it should store the `products` returned by the response in state.
@@ -171,16 +171,16 @@ The following specifications were met on the Express backend and the React front
   - `showDescription` - boolean
 - [x] Should render the `name` of the product inside an element with the `className` of `product-name`
 - [x] Should render the `price` of the product inside an element with the `className` of `product-price`. The price should formatted so that it starts with a `$`, and has **at least one** integer digit, along with **exactly two** decimal digits. Examples - `$22.99`, `$860.20`, and `$0.50`
-- [] If the `showDescription` prop is set to `true`, it should render the `description` of the product inside an element with the `className` of `product-description`.
+- [x] If the `showDescription` prop is set to `true`, it should render the `description` of the product inside an element with the `className` of `product-description`.
 - [x] Should render an `img` element for the product:
   - [x] The `img` element should have a `src` attribute to set to the `image` property of the `product` prop.
   - [x] The `img` element should be wrapped in a `Link` component from `react-router-dom`.
     - [x] The `Link` element should have a `to` prop so that when the `img` element is clicked on, it should navigate to the product detail route for that product using its `id` attribute. For example, a product with an `id` of `4` should create a `Link` with its `to` prop set to `/products/4`.
     - [x] The `Link` that wraps the `img` element should be nested somewhere inside an element with the `className` of `media`.
-- [] Should render two `buttons` elements...
-  - [] One button with a `className` of `add`. When clicked, it should call the `handleAddItemToCart` function with the `id` of the `product` as its only argument.
-  - [ ] One button with a `className` of `remove`. When clicked, it should call the `handleRemoveItemFromCart` function with the `id` of the `product` as its only argument.
-- [ ] Should display the current quantity of items that the user has selected in their shopping cart. The quantity should be rendered inside an element with the `className` of `product-quantity`. If none of that particular item have been added to the shopping cart, it should render nothing there.
+- [x] Should render two `buttons` elements...
+  - [x] One button with a `className` of `add`. When clicked, it should call the `handleAddItemToCart` function with the `id` of the `product` as its only argument.
+  - [x] One button with a `className` of `remove`. When clicked, it should call the `handleRemoveItemFromCart` function with the `id` of the `product` as its only argument.
+- [x] Should display the current quantity of items that the user has selected in their shopping cart. The quantity should be rendered inside an element with the `className` of `product-quantity`. If none of that particular item have been added to the shopping cart, it should render nothing there.
 
 **Sidebar.jsx**
 
@@ -199,8 +199,8 @@ The following specifications were met on the Express backend and the React front
 
 **ShoppingCart.jsx**
 
-- [ ] Should render JSX that is wrapped by a `div` element with the `className` of `shopping-cart`
-- [ ] Should accept **at least** the following props (and probably a few more):
+- [x] Should render JSX that is wrapped by a `div` element with the `className` of `shopping-cart`
+- [x] Should accept **at least** the following props (and probably a few more):
   - `isOpen` - boolean representing the open/closed state of the Sidebar
   - `products` - the array of products fetched from the API
   - `shoppingCart` - the active user's cart formatted as an array of objects with `itemId` and `quantity` keys
@@ -246,22 +246,22 @@ The following specifications were met on the Express backend and the React front
 **Server** - Create an Express server
 
 - [ ] Wire up the appropriate middleware and error handlers in the `app.js` file
-- [ ] Create a single `GET` request handler at the `/` endpoint. It should respond to all `GET` requests with a JSON object and a `200` status code. The JSON response should contain a single key of `ping` that stores the string value: `pong`. For example: `{ "ping": "pong" }`.
-- [ ] Have a `server.js` file that starts the app by listening on port `3001`.
+- [x] Create a single `GET` request handler at the `/` endpoint. It should respond to all `GET` requests with a JSON object and a `200` status code. The JSON response should contain a single key of `ping` that stores the string value: `pong`. For example: `{ "ping": "pong" }`.
+- [x] Have a `server.js` file that starts the app by listening on port `3001`.
 
 **Models** - The API should use a `Store` model that handles the following
 
-- [ ] List all products currently in the `db.json` file
-- [ ] Fetch a single product by its id
-- [ ] Create a purchase order
+- [x] List all products currently in the `db.json` file
+- [x] Fetch a single product by its id
+- [x] Create a purchase order
 
 **Routes** - The API should contain a route mounted at the `/store` endpoint
 
-- [ ] It should respond to `GET` requests to `/store` with an array of all products in the store in this format: `{ "products": products }`
-- [ ] It should respond to `GET` requests to `/store/:productId` with a single product based on the product's id using this JSON format: `{ "product": product }`
-- [ ] It should allow `POST` requests to the `/store` endpoint:
-  - [ ] The endpoint should create purchase orders for users and save them to the `db.json` file
-  - [ ] The endpoint should accept a request body that contains `shoppingCart` and `user` fields.
+- [x] It should respond to `GET` requests to `/store` with an array of all products in the store in this format: `{ "products": products }`
+- [x] It should respond to `GET` requests to `/store/:productId` with a single product based on the product's id using this JSON format: `{ "product": product }`
+- [x] It should allow `POST` requests to the `/store` endpoint:
+  - [x] The endpoint should create purchase orders for users and save them to the `db.json` file
+  - [] The endpoint should accept a request body that contains `shoppingCart` and `user` fields.
     - [ ] The `shoppingCart` field should contain the user's order.
       - [ ] This should be an array of objects.
       - [ ] Each object in the array should have two fields:

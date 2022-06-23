@@ -12,10 +12,32 @@ export default function ShoppingCart(props) {
               <i className="material-icons md-48">add_shopping_cart</i>
             </span>
           </h3>
-          <div className="notification">
-            {" "}
-            No items added to cart yet. Start shopping now!
-          </div>
+          {props.shoppingCart.length == 0 ? (
+            <div className="notification">
+              No items added to cart yet. Start shopping now!
+            </div>
+          ) : (
+            <div className="CartTable">
+              <div className="header">
+                <div className="header-row">
+                  <span className="flex-2">Name</span>
+                  <span className="center">Quantity</span>
+                  <span className="center">Unit Price</span>
+                  <span className="center">Cost</span>
+                </div>
+                {props.shoppingCart.map((item) => {
+                  return (
+                    <div className="product-row">
+                      <span className="flex-2 cart-product-name"></span>
+                      <span className="center cart-product-quantity"></span>
+                      <span className="center cart-product-price"></span>
+                      <span className="center cart-product-subtotal"></span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
           <div className="checkout-form">
             <h3>
               Payment Info

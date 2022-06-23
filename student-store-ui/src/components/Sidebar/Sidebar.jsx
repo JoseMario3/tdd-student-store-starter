@@ -14,7 +14,11 @@ export default function Sidebar(props) {
         >
           <i className="material-icons md-48">arrow_forward</i>
         </button>
-        <ShoppingCart isOpen={props.isOpen} />
+        <ShoppingCart
+          isOpen={props.isOpen}
+          shoppingCart={props.shoppingCart}
+          products={props.products}
+        />
       </div>
     </section>
   );

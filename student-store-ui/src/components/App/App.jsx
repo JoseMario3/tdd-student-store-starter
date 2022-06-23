@@ -18,6 +18,9 @@ export default function App() {
   const [active, setActive] = useState("All Categories");
   const [isOpen, setSidebar] = useState(false);
   const [hamburger, setHamburger] = useState(true);
+  const [error, setError] = useState(null);
+  const [checkoutForm, setCheckoutForm] = useState(null);
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   const handleOnSubmit = (event) => {
     setSearch(event.target.value);
@@ -32,11 +35,46 @@ export default function App() {
   };
 
   const handleAddItemToCart = (event) => {
-    return 0;
+    let newObject = {
+      itemId: event,
+      quantity: 1,
+    };
+
+    let copy = [...shoppingCart];
+    if (shoppingCart.length == 0) {
+      setShoppingCart([newObject]);
+    } else {
+      for (let i = 0; i < shoppingCart.length; i++) {
+        if (shoppingCart[i].itemId == event) {
+          copy[i].quantity += 1;
+          setShoppingCart(copy);
+          break;
+        } else if (i + 1 == shoppingCart.length) {
+          setShoppingCart([...shoppingCart, newObject]);
+        }
+      }
+    }
   };
 
+  console.log(shoppingCart);
+
   const handleRemoveItemFromCart = (event) => {
-    return 0;
+    if (shoppingCart.length == 0) {
+      return;
+    }
+
+    let copy = [...shoppingCart];
+
+    for (let i = 0; i < shoppingCart.length; i++) {
+      if (shoppingCart[i].itemId == event && shoppingCart[i].quantity > 0) {
+        copy[i].quantity -= 1;
+        setShoppingCart(copy);
+      }
+
+      if (shoppingCart[i].quantity <= 0) {
+        shoppingCart.splice(i, 1);
+      }
+    }
   };
 
   const handleOnCheckoutFormChange = (event) => {
@@ -51,14 +89,14 @@ export default function App() {
     const getProducts = async () => {
       setIsFetching(true);
       try {
-        const response = await axios.get(
-          "https://codepath-store-api.herokuapp.com/store"
-        );
+        const response = await axios.get("http://localhost:3001/store");
         setProducts(response.data.products);
-      } catch {
+      } catch (error) {
+        setError(error);
         setIsFetching(false);
       }
     };
+    setIsFetching(false);
     getProducts();
   }, []);
 
@@ -68,7 +106,7 @@ export default function App() {
         <main>
           <Navbar />
           <Sidebar
-            shoppingCart={products}
+            shoppingCart={shoppingCart}
             products={products}
             checkoutForm={null}
             handleOnCheckoutFormChange={null}
@@ -82,8 +120,8 @@ export default function App() {
               element={
                 <Home
                   products={products}
-                  handleadditemtocart={null}
-                  handleremoveitemfromcart={null}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemFromCart={handleRemoveItemFromCart}
                   category={category}
                   setCategory={setCategory}
                   search={search}
@@ -92,6 +130,7 @@ export default function App() {
                   setActive={setActive}
                   hamburger={hamburger}
                   handleHamburger={handleHamburger}
+                  shoppingCart={shoppingCart}
                 />
               }
             />
@@ -99,8 +138,9 @@ export default function App() {
               path="/products/:productId"
               element={
                 <ProductDetail
-                  handleAddItemToCart={null}
-                  handleRemoveItemFromCart={null}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemFromCart={handleRemoveItemFromCart}
+                  shoppingCart={shoppingCart}
                 />
               }
             />

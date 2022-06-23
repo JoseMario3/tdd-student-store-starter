@@ -37,8 +37,9 @@ export default function Home(props) {
 
       <ProductGrid
         products={filterSearch}
-        handleadditemtocart={null}
-        handleremoveitemfromcart={null}
+        handleAddItemToCart={props.handleAddItemToCart}
+        handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+        shoppingCart={props.shoppingCart}
       />
 
       <About />

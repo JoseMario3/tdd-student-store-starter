@@ -124,3 +124,22 @@
     width: 0px;
     height: 0px;
 }
+
+.product-card .product-quantity {
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.product-card .product-quantity .amt {
+    background: orange;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
