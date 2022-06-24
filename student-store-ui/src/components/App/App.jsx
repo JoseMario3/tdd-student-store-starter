@@ -19,8 +19,15 @@ export default function App() {
   const [isOpen, setSidebar] = useState(false);
   const [hamburger, setHamburger] = useState(true);
   const [error, setError] = useState(null);
-  const [checkoutForm, setCheckoutForm] = useState(null);
+  const [checkoutForm, setCheckoutForm] = useState({
+    name: "",
+    email: "",
+  });
   const [shoppingCart, setShoppingCart] = useState([]);
+  const [sent, setSent] = useState(true);
+  const [shoppingExists, setShoppingExists] = useState(true);
+  const [success, setSuccess] = useState(false);
+  const [receipt, setReceipt] = useState({});
 
   const handleOnSubmit = (event) => {
     setSearch(event.target.value);
@@ -56,8 +63,6 @@ export default function App() {
     }
   };
 
-  console.log(shoppingCart);
-
   const handleRemoveItemFromCart = (event) => {
     if (shoppingCart.length == 0) {
       return;
@@ -71,18 +76,55 @@ export default function App() {
         setShoppingCart(copy);
       }
 
-      if (shoppingCart[i].quantity <= 0) {
-        shoppingCart.splice(i, 1);
-      }
+      const withRemoved = shoppingCart.filter((item) => {
+        return item.quantity > 0;
+      });
+
+      setShoppingCart(withRemoved);
     }
   };
 
   const handleOnCheckoutFormChange = (event) => {
-    return 0;
+    const { name, value } = event.target;
+    setCheckoutForm((current) => ({
+      ...current,
+      [name]: value,
+    }));
   };
 
-  const handleOnSubmitCheckoutForm = (event) => {
-    return 0;
+  const handleOnSubmitCheckoutForm = async () => {
+    if (checkoutForm.name == "" || checkoutForm.email == "") {
+      setSent(false);
+      return;
+    } else {
+      setSent(true);
+    }
+
+    if (shoppingCart.length == 0) {
+      setShoppingExists(false);
+      return;
+    } else {
+      setShoppingExists(true);
+    }
+
+    try {
+      const message = await axios.post("http://localhost:3001/store/", {
+        user: checkoutForm,
+        shoppingCart: shoppingCart,
+      });
+
+      const response = await axios.get("http://localhost:3001/store/purchases");
+      setCheckoutForm({
+        name: "",
+        email: "",
+      });
+      setShoppingCart([]);
+      setReceipt(response.data.purchases);
+      setSuccess(true);
+      console.log("hello");
+    } catch (error) {
+      setError(error);
+    }
   };
 
   useEffect(() => {
@@ -108,11 +150,16 @@ export default function App() {
           <Sidebar
             shoppingCart={shoppingCart}
             products={products}
-            checkoutForm={null}
-            handleOnCheckoutFormChange={null}
-            handleOnSubmitCheckoutForm={null}
+            checkoutForm={checkoutForm}
+            handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
             handleOnToggle={handleOnToggle}
+            success={success}
+            sent={sent}
             isOpen={isOpen}
+            shoppingExists={shoppingExists}
+            receipt={receipt}
+            setSuccess={setSuccess}
           />
           <Routes>
             <Route

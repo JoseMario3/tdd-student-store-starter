@@ -145,5 +145,106 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "createdAt": "2022-06-24T22:36:50.773Z",
+      "name": "Jose",
+      "email": "jose@yahoo.com",
+      "total": "46.72",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 4
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 1,
+          "quantity": 2
+        },
+        {
+          "itemId": 7,
+          "quantity": 1
+        },
+        {
+          "itemId": 8,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "createdAt": "2022-06-24T22:37:31.624Z",
+      "name": "Jose",
+      "email": "jose@yahoo.com",
+      "total": "43.99",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 3
+        },
+        {
+          "itemId": 4,
+          "quantity": 2
+        },
+        {
+          "itemId": 7,
+          "quantity": 1
+        },
+        {
+          "itemId": 8,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "createdAt": "2022-06-24T22:39:00.778Z",
+      "name": "jose",
+      "email": "jose@yahoo.com",
+      "total": "1631.17",
+      "order": [
+        {
+          "itemId": 14,
+          "quantity": 4
+        },
+        {
+          "itemId": 15,
+          "quantity": 3
+        },
+        {
+          "itemId": 16,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "createdAt": "2022-06-24T22:39:41.804Z",
+      "name": "jose",
+      "email": "jose@yahoo.com",
+      "total": "108.66",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 4
+        },
+        {
+          "itemId": 4,
+          "quantity": 2
+        },
+        {
+          "itemId": 6,
+          "quantity": 4
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ]
+    }
+  ]
 }
